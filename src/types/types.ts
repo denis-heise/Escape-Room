@@ -10,7 +10,7 @@ export type Quest = {
   "previewImg": string;
   "coverImg": string;
   "type": string;
-  "level": "hard";
+  "level": string;
   "peopleCount": number[];
   "duration": number
 }

@@ -55,6 +55,6 @@ export const locationMainMarker = {
 export const ICON_SIZE: PointExpression | undefined = [48, 60];
 export const ICON_ANCHOR: PointExpression | undefined = [30, 48];
 export const MapSettings = {
-  TILE_LAYER: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-  ATTRIBUTION: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  TILE_LAYER: 'https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
+  ATTRIBUTION: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, Tools by OSM France',
 };

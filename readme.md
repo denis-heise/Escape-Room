@@ -1,78 +1,43 @@
-Имя студента: Денис Белокопытов
-Время затраченное на разработку проекта: 38 часов
+# Escape Room — Advanced Quest Booking Service (TypeScript & OOP Showcase)
 
-## Скрипты
+An advanced interactive web application for browsing, filtering, and booking immersion escape rooms. This project serves as a comprehensive demonstration of Object-Oriented Programming (OOP) principles, strict design patterns, and rigorous modular type-safety using TypeScript.
 
-В проекте, можно использовать следующие скрипты
+- **Developer:** Denis Belokopytov
+- **Time spent on development:** 38 hours
 
-### `npm run start:eslint`
+*Note: The UI/UX layouts, styling, and DOM templates were provided as a base by HTML Academy. My singular focus was to architect the end-to-end frontend execution logic, manage component state lifecycle events, construct modular data objects, and implement domain boundaries using pure TypeScript.*
 
-Запускает проверку прохождения проекта на eslint.
+## 🛠 Tech Stack & Engineering Core
+- **Primary Architecture:** Pure TypeScript (Strict Mode, 100% compilation safety)
+- **State Management:** Redux Toolkit (`createSlice`, standalone asynchronous Thunks, typed selectors)
+- **Programming Paradigm:** Object-Oriented Programming (OOP) with clean encapsulation, abstraction layers, and explicit class access modifiers (`private`, `protected`, `public`).
+- **Styling Pipeline:** Component-scoped encapsulation via Styled Components (`styled-components`) supporting custom theme providers and isolated namespace mapping (`import * as S`).
 
-Если есть ошибки или предупреждения, они выведутся в консоли после завершения выполнения команды.
+## 💡 Key Technical & Architectural Features Engineered by Me:
+- **100% Offline Autonomy:** Completely decoupled the client runtime from local server dependencies (`json-server`). Integrated a structured local database (`mocks/quests.ts`) hosting 9 native quest profiles with deep parameters (complexity tiers, duration bounds, and dynamic participant counts).
+- **Rigid Data Domain Enforcement:** Established explicit TypeScript interfaces and complex structural types to guarantee complete data contract security across the layout-to-network pipeline.
+- **Interactive Multi-Tiered Filtering:** Designed an optimized client-side layout filtering controller. Users can dynamically sort quest instances simultaneously by genre (Sci-Fi, Horror, Detective, Mystical, Adventures) and complexity levels (Easy, Medium, Hard) without incurring UI rendering latency.
+- **Standalone Form Lifecycles:** Configured an asynchronous transaction interceptor layer for processing user reservations. Replaced legacy server endpoints with an instantaneous local promise-resolution architecture that validates payloads and gracefully dispatches mock execution contexts to trigger UI modal dismissals.
 
-### `npm run start:client`
+## ⚙️ How to Run Locally & Available Scripts
 
-Запускает **клиентскую** часть приложение в режиме разработки.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/denis-heise/Escape-Room
+   ```
 
-Откройте [http://localhost:3000](http://localhost:3000) чтобы просмотреть его в браузере.
+2. **Install all required dependencies:**
+   ```bash
+   npm install
+   ```
 
-Страница перезагрузится, если вы внесете правки.
+3. **Launch the application:**
+   ```bash
+   npm run start
+   ```
+   *This boots up the standalone client application in development mode directly via the integrated legacy provider compatibility layer. Open [http://localhost:3000](http://localhost:3000) to view it reactively in your browser.*
 
-Вы также увидите любые ошибки линтера в консоли.
+### Additional Production Commands:
 
-### `npm run start:server`
-
-Запускает **серверную** часть приложения, с которой можно получить данные для разработки клиентского приложения. Доступно на [http://localhost:3001](http://localhost:3001)
-
-### `npm run start`
-
-Запускает клиентскую и серверную часть приложения в *одной* консоли, параллельно.
-
-### `npm run build`
-
-Собирает **клиентскую** часть приложение в папку `build`.
-
-Сборка минифицирована, а имена файлов включают хеши.
-
-
-## Сервер
-
-После запуска команды `npm run start:server` (или `npm run start` для запуска двух приложений параллельно), сервер доступн по пути [http://localhost:3001](http://localhost:3001).
-
-### Структуры данных
-
-#### Quest
-
-```json
-{
-  "id": 1,
-  "title": "Склеп",
-  "description": "Средневековое кладбище таит в себе много страшных тайн. Местные жители говорят, что в склепе похоронен граф вампир, который по ночам выходит на охоту, чтобы испить человеческой крови. Через час солнце опустится за горизонт, успеете ли вы убить вампира и выбраться из склепа?",
-  "previewImg": "img/preview-sklep.jpg",
-  "coverImg": "img/cover-sklep.jpg",
-  "type": "horror",
-  "level": "hard",
-  "peopleCount": [2, 5],
-  "duration": 120
-}
-```
-
-#### OrderPost
-
-```json
-{
-  "name": "Jon Vek",
-  "peopleCount": 1,
-  "phone": "7000000000",
-  "isLegal": true
-}
-```
-
-### Список роутов:
-
-- **GET** /quests — получить список квестов.
-
-- **GET** http://localhost:3001/quests/1 — получить квест c идентификатором `id`.
-
-- **POST** http://localhost:3001/orders — отправить новый заказ.
+- `npm run build` — Builds the client-side single-page application for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance, including automated filename hashing.
+- `npm run start:eslint` — Runs the absolute code quality pipeline through ESLint configurations to enforce strict production code standards.
