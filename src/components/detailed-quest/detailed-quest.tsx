@@ -21,6 +21,9 @@ function DetailedQuest () {
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
   const quests = useAppSelector(getQuests);
   const isSelectQuest = quests.find((item) => item.id === Number(idPage));
+  const imgPath = isSelectQuest
+    ? (isSelectQuest.coverImg.startsWith('/') ? isSelectQuest.coverImg : `/${isSelectQuest.coverImg}`)
+    : '';
 
   useEffect(() => {
     dispatch(selectLinkMenu(headerMenuLinks[0].name));
@@ -57,7 +60,7 @@ function DetailedQuest () {
         {isSelectQuest ? (
           <S.Main>
             <S.PageImage
-              src={`/${isSelectQuest.coverImg}`}
+              src={`${process.env.PUBLIC_URL}${imgPath}`}
               alt={`Квест ${isSelectQuest.title}`}
               width="1366"
               height="768"

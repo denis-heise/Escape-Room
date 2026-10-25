@@ -9,12 +9,16 @@ type propsQuestItem = {
 }
 
 function OneQuest ({questItemData}: propsQuestItem) {
+  const imgPath = questItemData.previewImg.startsWith('/')
+    ? questItemData.previewImg
+    : `/${questItemData.previewImg}`;
+
   return(
     <S.QuestItem>
       <S.QuestItemLink to={`${AppRoute.Quest}/${questItemData.id}`}>
         <S.Quest>
           <S.QuestImage
-            src={questItemData.previewImg}
+            src={`${process.env.PUBLIC_URL}${imgPath}`}
             width="344"
             height="232"
             alt={questItemData.title}
