@@ -1,5 +1,7 @@
 # Escape Room — Advanced Quest Booking Service (TypeScript & OOP Showcase)
 
+🔗 **Live Demo:** https://denis-heise.github.io/Escape-Room/
+
 An advanced interactive web application for browsing, filtering, and booking immersion escape rooms. This project serves as a comprehensive demonstration of Object-Oriented Programming (OOP) principles, strict design patterns, and rigorous modular type-safety using TypeScript.
 
 - **Developer:** Denis Belokopytov
